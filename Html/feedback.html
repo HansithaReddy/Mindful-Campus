@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Feedback</title>
+    <link rel="stylesheet" href="feed.css" />
+    <link rel="shortcut icon" href="girl_2.png" type="image/x-icon"/>
+  </head>
+  <body>
+    <div class="nav">
+      <div class="branding">
+        <img src="girl_2.png" alt="girl" class="girl" />
+        <h1>Mindful<span class="stroke"> Campus</span></h1>
+      </div>
+    </div>
+    <div class="container">
+      <div class="cont-top">
+        <h1>Your Opinion Matters</h1>
+        <p class="tagline">Shaping Excellence with Your Feedback</p>
+      </div>
+      <div class="input">
+        <form action="submit_feedback.php" method="post">
+          <input type="text" name="feedback" placeholder="Enter your feedback here..." required />
+          <br /><br />
+          <p class="perms_head">May we use your feedback?</p>
+          <div class="perms_input">
+            <div class="option">
+                <input type="radio" id="yes" name="permission" value="YES" required />
+                <label for="yes">Yes</label>
+            </div>
+            <div class="option">
+                <input type="radio" id="no" name="permission" value="NO" required />
+                <label for="no">No</label></div></br></br></br>
+            </div>
+        </div>        
+          <div class="save">
+            <button type="submit" class="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

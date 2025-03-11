@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Client Chat</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .chat-container {
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 400px;
+      max-width: 90%;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .chat-header {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    #messages {
+      list-style-type: none;
+      padding: 0;
+      overflow-y: auto;
+      flex-grow: 1;
+      margin-bottom: 20px;
+      border: 1px solid #e1e1e1;
+      border-radius: 10px;
+      max-height: 300px;
+    }
+
+    #messages li {
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      word-wrap: break-word;
+    }
+
+    .client-msg {
+      background-color: #d1e7dd;
+      align-self: flex-start;
+    }
+
+    .expert-msg {
+      background-color: #cfe2ff;
+      align-self: flex-end;
+    }
+
+    #input-container {
+      display: flex;
+      align-items: center;
+    }
+
+    #m {
+      padding: 10px;
+      flex-grow: 1;
+      border: 1px solid #e1e1e1;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+
+    #send {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #send:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="chat-container">
+    <div class="chat-header">Client Chat</div>
+    <ul id="messages"></ul>
+    <div id="input-container">
+      <input id="m" autocomplete="off" placeholder="Type your message here" />
+      <button id="send">Send</button>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    var socket = io('/client');
+
+    document.querySelector('#send').addEventListener('click', function() {
+      var input = document.querySelector('#m');
+      if (input.value.trim()) {
+        socket.emit('client message', { text: input.value });
+        addMessage('You: ' + input.value, 'client-msg');
+        input.value = '';
+      }
+    });
+
+    socket.on('expert reply', function(msg) {
+      addMessage('Expert: ' + msg.text, 'expert-msg');
+    });
+
+    function addMessage(text, className) {
+      var item = document.createElement('li');
+      item.textContent = text;
+      item.classList.add(className);
+      document.querySelector('#messages').appendChild(item);
+      document.querySelector('#messages').scrollTop = document.querySelector('#messages').scrollHeight;
+    }
+  </script>
+</body>
+</html>

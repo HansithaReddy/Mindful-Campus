@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>FAQ</title>
+    <link rel="stylesheet" href="faq_css.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <div class="nav">
+        <div class="branding">
+          <img src="girl_2.png" alt="girl" class="girl" />
+          <h1>Mindful<span class="stroke"> Campus</span></h1>
+        </div>
+        <div class="links">
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li class="dropdown">
+              <a href="services.html" class="dropbtn">Services</a>
+              <div class="dropdown-content">
+                <a href="services.html">Workshops</a>
+                <a href="services.html">Wellness Programs</a>
+                <a href="services.html">Speak to expert</a>
+              </div>
+            </li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="http://localhost/feedback/feedback.html">Feedback</a></li>
+            </ul>
+        </div>
+      </div>
+      <h2>Frequently Asked Questions</h2>
+    <div class="container">
+      <div class="faq-list">
+        <div class="faq">
+            <div class="ques">
+                <p>What is Mindful Campus?</p>
+                <i style="font-size:24px" class="fa">&#xf067;</i>
+            </div>
+            <div class="ans">
+              <p>
+                Mindful Campus is a platform dedicated to promoting mental well-being among students and staff through anonymous support, resources, and community engagement.
+              </p>
+            </div>
+        </div>
+        <div class="faq">
+            <div class="ques">
+                <p>How does Mindful Campus work?</p> 
+                <i style="font-size:24px" class="fa">&#xf067;</i>
+            </div>
+            <div class="ans">
+              <p>
+                Mindful Campus provides anonymous support through forums, chatrooms, and one-on-one messaging with trained volunteers and mental health professionals. Users can seek help, share their experiences, and connect with others in a safe and confidential environment.
+              </p>
+            </div>
+        </div>
+        <div class="faq">
+            <div class="ques">
+                <p>Is my information kept anonymous and confidential?</p>                
+                <i style="font-size:24px" class="fa">&#xf067;</i>
+            </div>
+            <div class="ans">
+              <p>
+                Yes, Mindful Campus ensures that all user interactions are completely anonymous and confidential. Your personal information is never shared, and conversations are secured to protect your privacy.
+              </p>
+            </div>
+        </div>
+        <div class="faq">
+            <div class="ques">
+                <p>Who can use Mindful Campus?</p>                
+                <i style="font-size:24px" class="fa">&#xf067;</i>
+            </div>
+            <div class="ans">
+              <p>
+                Mindful Campus is available to all students, faculty, and staff at participating educational institutions. Check with your institution to see if they are part of our network.
+              </p>
+            </div>
+        </div>
+        <div class="faq">
+            <div class="ques">
+                <p>How do I sign up for Mindful Campus?</p>                
+                <i style="font-size:24px" class="fa">&#xf067;</i>
+            </div>
+            <div class="ans">
+              <p>
+                No sign-up is required for anonymous support. Simply visit our website, and you can start engaging with the community or seek help immediately.
+              </p>
+            </div>
+        </div>
+        <div class="faq">
+            <div class="ques">
+                <p>What types of support can I find on Mindful Campus?</p>                
+                <i style="font-size:24px" class="fa">&#xf067;</i>
+            </div>
+            <div class="ans">
+              <p>
+                You can find peer support through forums and chatrooms, as well as professional support from licensed mental health professionals available for one-on-one anonymous chats.
+              </p>
+            </div>
+        </div>
+        <div class="faq">
+          <div class="ques">
+              <p>How can I participate in the Mindful Campus community?</p>                
+              <i style="font-size:24px" class="fa">&#xf067;</i>
+          </div>
+          <div class="ans">
+            <p>
+              You can participate by joining discussions in our forums, attending virtual events and workshops, and connecting with peers and professionals through our chat features.            </p>
+          </div>
+      </div>
+      <div class="faq">
+        <div class="ques">
+            <p>Is there a mobile app for Mindful Campus?</p>                
+            <i style="font-size:24px" class="fa">&#xf067;</i>
+        </div>
+        <div class="ans">
+          <p>
+            Currently, Mindful Campus is accessible via web browsers on both desktop and mobile devices. We are working on developing a mobile app to enhance user experience.          </p>
+        </div>
+    </div>
+      </div>
+    </div> 
+    <script>
+      const faqs=document.querySelectorAll(".faq")
+      faqs.forEach((faq)=>{
+        faq.addEventListener("click",()=>{
+            if(faq.classList.contains("active")){
+                faq.classList.remove("active")
+            }
+            else{
+                faq.classList.add("active")
+                faqs.forEach((otherFaq)=>{
+                    if(otherFaq!=faq){
+                        otherFaq.classList.remove("active")
+                    }
+                })
+            }
+        })
+      })
+    </script>
+  </body>
+</html>
