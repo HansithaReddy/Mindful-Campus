@@ -16,3 +16,16 @@ CSS: Styling and layout of the application.​
 JavaScript: Interactive features and dynamic content.​
 
 PHP: Server-side processing and data handling.
+
+## How to Get Started
+Clone the Repository:
+
+git clone https://github.com/HansithaReddy/Mindful-Campus.git
+
+Open the Project Folder:
+
+cd Mindful-Campus
+
+Run a Local Server (Using XAMPP/WAMP for PHP).
+
+Access the App: Open http://localhost/Mindful-Campus in your browser.
